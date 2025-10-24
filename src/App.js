@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function App() {
   return (
     <div className="App">
@@ -7,9 +9,10 @@ function App() {
 }
 
 function TipCalculator() {
+  const [bill, setBill] = useState("");
   return (
     <div>
-      <BillInput />
+      <BillInput bill={bill} onSetBill={setBill} />
       <SelectPercentage>How did you like the service?</SelectPercentage>
       <SelectPercentage>How did your friend like the service?</SelectPercentage>
       <Output />
@@ -47,6 +50,8 @@ function Output() {
   </return>;
 }
 
-function Reset() {}
+function Reset() {
+  return <button>Reset</button>;
+}
 
 export default App;
