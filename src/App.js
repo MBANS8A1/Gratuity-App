@@ -18,7 +18,14 @@ function TipCalculator() {
   );
 }
 
-function BillInput() {}
+function BillInput() {
+  return (
+    <div>
+      <label for="bill">How much was the bill?</label>
+      <input id="bill" type="text" placeholder="Bill Value..." />
+    </div>
+  );
+}
 
 function SelectPercentage() {}
 
