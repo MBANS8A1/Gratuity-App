@@ -6,7 +6,17 @@ function App() {
   );
 }
 
-function TipCalculator() {}
+function TipCalculator() {
+  return (
+    <div>
+      <BillInput />
+      <SelectPercentage />
+      <SelectPercentage />
+      <Output />
+      <Reset />
+    </div>
+  );
+}
 
 function BillInput() {}
 
