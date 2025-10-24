@@ -21,11 +21,17 @@ function TipCalculator() {
   );
 }
 
-function BillInput() {
+function BillInput({ bill, onSetBill }) {
   return (
     <div>
       <label htmlFor="bill">How much was the bill?</label>
-      <input id="bill" type="text" placeholder="Bill Value..." />
+      <input
+        id="bill"
+        type="text"
+        placeholder="Bill Value..."
+        value={bill}
+        onChange={(e) => onSetBill(Number(e.target.value))}
+      />
     </div>
   );
 }
