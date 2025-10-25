@@ -42,11 +42,15 @@ function BillInput({ bill, onSetBill }) {
   );
 }
 
-function SelectPercentage({ children }) {
+function SelectPercentage({ children, percentage, onSelect }) {
   return (
     <div>
       <label htmlFor="satisDegree">{children}</label>
-      <select id="satisDegree">
+      <select
+        id="satisDegree"
+        value={percentage}
+        onChange={(e) => onSelect(Number(e.target.value))}
+      >
         <option value="0">Dissatisfied (0%)</option>
         <option value="5">It was okay (5%)</option>
         <option value="10">It was good (10%)</option>
