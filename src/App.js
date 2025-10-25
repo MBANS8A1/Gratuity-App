@@ -15,6 +15,12 @@ function TipCalculator() {
 
   const tip = bill * ((percentage1 + percentage2) / 2 / 100);
 
+  function handleReset() {
+    setBill("");
+    setPercentage1(0);
+    setPercentage2(0);
+  }
+
   return (
     <div>
       <BillInput bill={bill} onSetBill={setBill} />
@@ -25,7 +31,7 @@ function TipCalculator() {
         How did your friend like the service?
       </SelectPercentage>
       <Output bill={bill} tip={tip} />
-      <Reset />
+      <Reset onReset={handleReset} />
     </div>
   );
 }
@@ -71,8 +77,8 @@ function Output({ bill, tip }) {
   );
 }
 
-function Reset() {
-  return <button>Reset</button>;
+function Reset({ onReset }) {
+  return <button onClick={onReset}>Reset</button>;
 }
 
 export default App;
